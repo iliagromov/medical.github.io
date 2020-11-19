@@ -1,0 +1,136 @@
+.about{
+    &-block{
+        .row-flex();
+        padding: 25px 0;
+        &__img{
+            .col();
+            .size(4);
+            .sm(display,none);
+        }
+        &__text{
+            .col();
+            .size(8);
+            .size-sm(12);
+            padding-top: 28px;
+            .page__title-h2{
+                text-align: left;
+                .sm(text-align,center);
+            }
+            .page__text{
+                .size(10);
+                .size-sm(12);
+                .sm(text-align,center);
+                letter-spacing: 1px;
+            }
+        }
+        &__advantages{
+            display: flex;
+            align-items: center;
+            height: 100px;
+            .sm(flex-wrap,wrap);
+            .ssm-block({
+                flex-direction: column;
+                height: auto;
+            });
+            .item{
+                .size-ssm(6);
+                position: relative;
+                font-size: 16px;
+                letter-spacing: 0px;
+                line-height: 28px;
+                color: @color_gray-4;
+                font-family: '@{Exo2}-Medium';
+                padding: 0 5px;
+                &::before,
+                &::after{
+                    content: "";
+                    display: block;
+                    position: relative;
+
+                }
+               
+                &:nth-child(odd){
+                    align-self: flex-end;
+                    &::before{
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 100%;
+                        background-color: @color_blue;
+                    
+                        z-index: 1;
+                        .ssm-block({
+                            top: 21px;
+                            left: -22px;
+                        });
+                    }
+                    &::after{
+                        position: absolute;
+                        top: 6px;
+                      
+                        height: 1px;
+                        width: 100%;
+                        background-color: @color_gray-8;
+                        .ssm-block({
+                            height: 100%;
+                            width: 1px;
+                            left: -12px;
+
+                        });
+                    }
+
+                }
+                &:nth-child(even){
+                    align-self: flex-start;
+                    .ssm-block({
+                        display: flex;
+                        justify-content: flex-end;
+                    });
+                    &::before{
+                        position: absolute;
+                        bottom: 3px;
+                       
+                        height: 1px;
+                        width: 100%;
+                        background-color: @color_gray-8;
+                        .ssm-block({
+                            height: 100%;
+                            width: 1px;
+                            right: -9px;
+                            bottom: -7px;
+                            //fixme : исправить пиксели, сделать привязку к блоку адаптивно 
+                        });
+                       
+                    }
+                    &::after{
+                       
+                        top: 3px;
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 100%;
+                        background-color: @color_blue;
+                       
+                        z-index: 1;
+                        .ssm-block({
+                            position: absolute;
+                            right: -15px;
+                            top: 12px;
+                            //fixme : исправить пиксели, сделать привязку к блоку адаптивно 
+                        });
+                    }
+                }
+            }
+        }
+    }
+    &.animated{
+        .about-block__img{
+            .animated({
+                .fadeInLeft();
+            });
+        }
+        .about-block__text{
+            .animated({
+                .fadeInRight();
+            });
+        }
+    }
+}

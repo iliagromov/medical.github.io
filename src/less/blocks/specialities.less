@@ -1,0 +1,59 @@
+.specialities{
+    padding: 50px 0;
+    &-items{
+        .row-flex();
+        padding-top: 20px;
+        &__item{
+            .col();
+            .size(3);
+            .size-ssm(6);
+            .size-xs(12);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            .page__icon{
+                display: flex;
+                align-items: center;
+                min-height: 64px;
+                &_heart{
+                    .sprite(@icon-heart);
+                }
+                &_eye{
+                    .sprite(@icon-eye);
+                }
+                &_brain{
+                    .sprite(@icon-brain);
+                }
+                &_pharynx{
+                    .sprite(@icon-pharynx);
+                }
+            }
+
+        }
+    }
+    &.animated{
+        .page__title-h2{
+            .animated({
+                .fadeInDown();
+            });
+        }
+        .specialities-items__item{
+            .animated({
+                .fadeIn();
+                .delay(.1s);
+            });
+            &:nth-child(2){
+                .delay(.2s);
+            }
+            &:nth-child(3){
+                .delay(.4s);
+            }
+            &:nth-child(4){
+                .delay(.6s);
+            }
+            
+        }
+    }
+}

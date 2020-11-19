@@ -1,0 +1,35 @@
+.info{
+    position: relative;
+    background-image: url('../assets/img/img-bg-2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 260px;
+    
+    &-block{
+        position: relative;
+        min-height: inherit;
+        display: flex;
+        align-items: center;
+        .page__title-h2{
+            color: @color_white;
+            &_semibold{
+                font-size: 24px;
+            }
+        }
+    }
+    &_opacity{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+
+    }
+    &.animated{
+        .page__title-h2{
+            .animated({
+                .zoomIn();
+            });
+        }
+       
+    }
+}

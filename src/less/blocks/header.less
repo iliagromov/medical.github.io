@@ -1,0 +1,33 @@
+.header{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    &-block{
+        .row-flex();
+        justify-content: flex-end;
+        .xs(text-align, center);
+        .page__link{
+            .col();
+            .size-sm(12);
+        }
+        &__logo{
+      
+            .sprite(@icon-logo);
+            margin: 10px auto;
+        }
+        .social{
+            .col();
+            .size(5);
+            .size-sm(12);
+                align-items: center;
+                justify-content: flex-end;
+                .sm(justify-content, center);
+            
+        }
+    }
+    &.animated{
+        .animated({
+            .fadeIn();
+        });
+    }
+}

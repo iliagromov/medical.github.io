@@ -1,0 +1,21 @@
+extends templates/template
+
+block title
+	title Medical
+block append style
+block content
+	main.page 
+		include modules/header-module
+		include blocks/banner
+		include blocks/contacts
+		include blocks/about
+		include blocks/service
+		include blocks/specialities
+		include blocks/team
+		include blocks/testimonial
+		include blocks/info
+		include blocks/contact
+	include blocks/footer
+block append script
+	script(src='js/store-scroll.js')
+	script(src='js/scroll-anchors.js')
